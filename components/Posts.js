@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Post from './Post'
-
+import { GET_POSTS } from '../queries'
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -13,14 +13,7 @@ const Posts = () => {
 
   return (
     <Query
-      query={gql`
-        {
-          posts {
-            id
-            body
-          }
-        }
-      `}
+      query={GET_POSTS}
     >
       {({ loading, error, data }) => {
         if (loading) return <View><Text>Loading...</Text></View>;

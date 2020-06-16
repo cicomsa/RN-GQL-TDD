@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Button } from 'react-native';
-
+import { client } from '../App';
+import { ADD_POST, GET_POSTS } from '../queries'
 import Posts from './Posts'
 import FlexBoxes from './FlexBoxes'
 import AddPost from './AddPost'
 
 const RootComponent = () => {
-  const [posts, setPosts] = useState([])
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
-  const handleSubmit = post => {
-    setPosts([
-      ...posts,
-      {
-        id: Math.random().toString(),
-        value: post
-      }
-    ])
+  const handleSubmit = async post => {
+    const input = { body: post, author: 'me' };
+
+    await client.mutate({
+      variables: { input },
+      mutation: ADD_POST,
+      refetchQueries: () => [{ query: GET_POSTS }],
+    })
+
     setModalIsOpen(false)
   }
 
