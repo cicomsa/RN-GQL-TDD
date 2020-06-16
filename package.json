@@ -8,15 +8,20 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
+    "apollo-boost": "^0.4.9",
+    "apollo-client": "^2.6.10",
     "expo": "~37.0.3",
+    "graphql": "^15.1.0",
     "react": "~16.9.0",
+    "react-apollo": "^3.1.5",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
-    "babel-preset-expo": "~8.1.0",
-    "@babel/core": "^7.8.6"
+    "@babel/core": "^7.8.6",
+    "babel-preset-expo": "~8.1.0"
   },
   "private": true
 }

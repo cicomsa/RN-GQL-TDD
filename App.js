@@ -1,19 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppRegistry } from 'react-native';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+import MyRootComponent from './components/RootComponent'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+// Create the client as outlined in the setup guide
+export const client = new ApolloClient({
+  uri: "http://localhost:4000/graphql",
 });
+
+const App = () => (
+  <ApolloProvider client={client}>
+    <MyRootComponent />
+  </ApolloProvider>
+);
+
+export default App
+
+AppRegistry.registerComponent('MyApplication', () => App);
