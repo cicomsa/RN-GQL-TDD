@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Button, TextInput, Modal } from 'react-native';
+import { StyleSheet, View, Button, TextInput, Modal } from 'react-native'
 
 const AddPost = ({ handleSubmit, modalIsOpen, closeModal }) => {
   const [post, setPost] = useState('')

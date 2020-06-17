@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Button } from 'react-native';
+import React, { useState } from 'react'
+import { StyleSheet, View, Button } from 'react-native'
 import { client } from '../App';
 import { ADD_POST, GET_POSTS } from '../queries'
 import Posts from './Posts'
@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
   screen: {
     padding: 30,
   }
-});
+})
 
 export default RootComponent
