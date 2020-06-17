@@ -17,7 +17,16 @@ const ADD_POST = gql`
   }
 `
 
+const DELETE_POST = gql`
+  mutation deletePost($id: ID!) {
+    deletePost(id: $id) {
+      body
+    }
+  }
+`
+
 export {
   GET_POSTS,
-  ADD_POST
+  ADD_POST,
+  DELETE_POST
 }
