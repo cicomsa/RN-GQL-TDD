@@ -4,6 +4,7 @@ const GET_POSTS = gql`
   query posts {
     posts {
       id
+      author
       body
     }
   }
@@ -16,6 +17,7 @@ const ADD_POST = gql`
     }
   }
 `
+
 
 const DELETE_POST = gql`
   mutation deletePost($id: ID!) {

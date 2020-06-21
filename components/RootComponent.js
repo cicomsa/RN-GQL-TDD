@@ -10,7 +10,7 @@ const RootComponent = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   const handleSubmit = async post => {
-    const input = { body: post, author: 'me' };
+    const input = post
 
     await client.mutate({
       variables: { input },

@@ -6,7 +6,7 @@ import { GET_POSTS, DELETE_POST } from '../queries'
 import Post from './Post'
 
 const Posts = () => {
-  const handleRemove = async id => { // todo - this throws an error from GQL
+  const handleRemove = async id => {
     await client.mutate({
       variables: { id },
       mutation: DELETE_POST,
@@ -28,7 +28,7 @@ const Posts = () => {
             keyExtractor={item => item.id}
             renderItem={data =>
               <Post
-                post={data.item.body}
+                post={data.item}
                 deletePost={handleRemove}
                 id={data.item.id}
               />
