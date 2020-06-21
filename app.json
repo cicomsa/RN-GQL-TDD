@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "DoneWithIt",
-    "slug": "DoneWithIt",
+    "name": "RN+GQL+TDD",
+    "slug": "RN+GQL+TDD",
     "platforms": [
       "ios",
       "android",
