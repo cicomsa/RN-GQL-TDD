@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Post - Author should render correctly 1`] = `
+exports[`Post - Body should render correctly 1`] = `
 <View
-  className="body"
   style={
     Object {
       "marginVertical": 5,
@@ -10,15 +9,12 @@ exports[`Post - Author should render correctly 1`] = `
   }
 >
   <Text
-    className="body__copy"
     style={
       Object {
         "color": "orange",
         "textAlign": "center",
       }
     }
-  >
-    body
-  </Text>
+  />
 </View>
 `;

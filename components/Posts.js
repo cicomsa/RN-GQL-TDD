@@ -1,24 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, createContext } from 'react'
 import { StyleSheet, Text, View, FlatList } from 'react-native'
 import { Query } from "react-apollo"
 import { client } from '../App'
-import { GET_POSTS, DELETE_POST } from '../queries'
+import { GET_POSTS } from '../queries'
 import Post from './Post'
 
+export const PostContent = createContext('')
 const Posts = () => {
-  const handleRemove = async id => {
-    await client.mutate({
-      variables: { id },
-      mutation: DELETE_POST,
-      refetchQueries: () => [{ query: GET_POSTS }]
-    })
-  }
-
   return (
     <Query
       query={GET_POSTS}
     >
       {({ loading, error, data }) => {
+
         if (loading) return <View><Text>Loading...</Text></View>;
         if (error) return <View><Text>Error :(</Text></View>;
 
@@ -27,11 +21,9 @@ const Posts = () => {
             data={data.posts}
             keyExtractor={item => item.id}
             renderItem={data =>
-              <Post
-                post={data.item}
-                deletePost={handleRemove}
-                id={data.item.id}
-              />
+              <PostContent.Provider value={{ author: data.item.author, id: data.item.id, body: data.item.body }}>
+                <Post />
+              </PostContent.Provider>
             }
           />
         )

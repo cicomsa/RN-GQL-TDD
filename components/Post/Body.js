@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { PostContent } from '../Posts'
 
-const Body = ({ body }) => {
+const Body = () => {
+  const { body } = useContext(PostContent)
+
   return (
-    <View className="body" style={styles.post}>
-      <Text className="body__copy" style={styles.body}>{body}</Text>
+    <View style={styles.post}>
+      <Text style={styles.body}>{body}</Text>
     </View>
   )
 }
