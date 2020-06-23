@@ -1,11 +1,11 @@
-import React, { useState, createContext } from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, FlatList } from 'react-native'
 import { Query } from "react-apollo"
-import { client } from '../App'
+import client from '../apollo-client'
 import { GET_POSTS } from '../queries'
 import Post from './Post'
+import { PostContent } from '../contexts'
 
-export const PostContent = createContext('')
 const Posts = () => {
   return (
     <Query

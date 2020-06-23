@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { GET_POSTS, DELETE_POST } from '../../queries'
-import { client } from '../../App'
-import { PostContent } from '../Posts'
+import client from '../../apollo-client'
+import { PostContent } from '../../contexts'
 
 const Author = () => {
   const { author, id } = useContext(PostContent)

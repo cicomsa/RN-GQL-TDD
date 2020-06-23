@@ -28,6 +28,8 @@ exports[`Post - Author should render correctly 1`] = `
         "textAlign": "center",
       }
     }
-  />
+  >
+    
+  </Text>
 </View>
 `;

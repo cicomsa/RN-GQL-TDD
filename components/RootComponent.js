@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Button } from 'react-native'
-import { client } from '../App';
+import client from '../apollo-client';
 import { ADD_POST, GET_POSTS } from '../queries'
 import Posts from './Posts'
 import FlexBoxes from './FlexBoxes'

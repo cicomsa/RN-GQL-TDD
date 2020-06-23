@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { PostContent } from '../Posts'
+import { PostContent } from '../../contexts'
 
 const Body = () => {
   const { body } = useContext(PostContent)
